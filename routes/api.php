@@ -44,6 +44,7 @@ use App\Http\Controllers\Admin\ContactAdminController;
 |
 */
 
+// Code on git hub
 
 //Public routes
 Route::post("register",[UserController::class,'register']);
