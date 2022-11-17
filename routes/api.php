@@ -256,7 +256,7 @@ Route::middleware('auth:sanctum')->group(function () {
   Route::get("admin/nouveaux-convertis",[ConvertirAdminController::class,'index']);
   Route::get("admin/convertir/{convertir}",[ConvertirAdminController::class,'show']);
 
-  //Contact
+  //Contact us
   
      /******************************* Contact Admin ContactAdminController ***********************/
     Route::get('admin/contacts', [ContactAdminController::class,'index']);
