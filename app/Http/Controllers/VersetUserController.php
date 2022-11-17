@@ -47,7 +47,7 @@ class VersetUserController extends Controller
     {
     	$prefere = Prefere::create([
 
-						        "book"=>$request->book,
+						              "book"=>$request->book,
                                 "chapter"=>$request->chapter,
                                 "verse"=>$request->verse,
                                 "text"=>$request->text,

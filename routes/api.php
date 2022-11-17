@@ -162,11 +162,11 @@ Route::middleware('auth:sanctum')->group(function () {
      Route::get("users/{id}/signet",[AffranchiController::class,'index']);
      
      
-    /* SignalCommunauteController Communaute SignalCommunauteController*/
+    /* SignalCommunauteController Communaute SignalCommunauteController */
      Route::post('signal-communaute/{communaute}', [SignalCommunauteController::class, 'store']);
 
       
-     /* SignalPostController Communaute*/
+     /* SignalPostController Communaute */
      Route::post('signal-post/{post}', [SignalPostController::class, 'store']);
    
      /* SignalGroupecontroller Communaute*/

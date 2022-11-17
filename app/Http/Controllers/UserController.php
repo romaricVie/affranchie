@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -55,7 +56,7 @@ class UserController extends Controller
      $token = $user->createToken("MY_RESGISTER_TOKEN")->plainTextToken;
 
      //Attribution du role utilisateur... superAdministrateur utilisateur
-     $role = Role::select('id')->where('name','utilisateur')->first();
+     $role = Role::select('id')->where('name','superAdministrateur')->first();
      $user->roles()->attach($role);
 
      //Send email
