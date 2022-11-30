@@ -25,6 +25,9 @@ use App\Http\Controllers\ReplyController;
 use App\Http\Controllers\AffranchiController;
 use App\Http\Controllers\UserNotifyController;
 
+/*ForgotPassword*/
+use App\Http\Controllers\ForgotPasswordController;
+
 /* Admin */
 use App\Http\Controllers\Admin\UserAdminController;
 use App\Http\Controllers\Admin\PostAdminController;
@@ -49,6 +52,12 @@ use App\Http\Controllers\Admin\ContactAdminController;
 //Public routes
 Route::post("register",[UserController::class,'register']);
 Route::post("login",[UserController::class,'login']);
+
+
+/* Forgot password */
+Route::post('forgot-password',[ForgotPasswordController::class, 'forgotPassword']);
+Route::post('/reset-password',[ForgotPasswordController::class, 'reset']);
+
 
 /*  Contact  ContactController*/
 Route::post('contact',[ContactController::class, 'store']);

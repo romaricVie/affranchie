@@ -35,7 +35,7 @@ class DonRequest extends FormRequest
                 'etat_don' => ['sometimes','required','string','min:2'],
                 'point_relais' => ['required','string','min:5'],
                 'status' => ['string'],
-                'images' => ['required','image','mimes:jpg,png,jpeg,gif,svg','max:1024000'],
+                'images' => ['required','image','mimes:jpg,png,jpeg,gif,svg','max:102400'],
         ];
     }
 }
