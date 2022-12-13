@@ -18,7 +18,7 @@ class VersetResource extends JsonResource
            
              "type" =>"Verset-du-jour",
              "attributes"=>[
-                            
+                            "id"  =>$this->id,
                             "book"=>$this->book,
                             "chapter" => $this->chapter,
                             "verse" => $this->verse,

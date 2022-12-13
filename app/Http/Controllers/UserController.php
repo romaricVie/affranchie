@@ -375,11 +375,11 @@ class UserController extends Controller
                                  ->orWhere('phone','like','%'.$req.'%')
                                  ->get();
 
-                if(isset($users)){
+                if(count($users) > 0 ){
                    return UserResource::collection($users);
                 }else{
                   return response()->json([
-                      "error" => "Aucun utilisateur pour la recherche"
+                      "error" => "Aucun utilisateur pour la recherche ".$req
                   ]);
 
                 }

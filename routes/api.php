@@ -36,6 +36,7 @@ use App\Http\Controllers\Admin\VilleDonAdminController;
 use App\Http\Controllers\Admin\DonAdminController;
 use App\Http\Controllers\Admin\ConvertirAdminController;
 use App\Http\Controllers\Admin\ContactAdminController;
+use App\Http\Controllers\Admin\VersetAdminController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -188,6 +189,7 @@ Route::middleware('auth:sanctum')->group(function () {
      Route::delete('prieres/{id}',[PriereController::class, 'destroy']);
      Route::get('prieres/{id}',[PriereController::class, 'show']);
      Route::post('je-prie/{id}',[PriereController::class, 'prie']);
+     Route::get('prieres/search/{req}',[PriereController::class, 'search']);
     
     /*  Convertir ConvertirController  */
 
@@ -264,6 +266,15 @@ Route::middleware('auth:sanctum')->group(function () {
   //Nouveaux convertir 
   Route::get("admin/nouveaux-convertis",[ConvertirAdminController::class,'index']);
   Route::get("admin/convertir/{convertir}",[ConvertirAdminController::class,'show']);
+
+  // VersetAdmin VersetAdminController
+
+  Route::get("admin/versets/index",[VersetAdminController::class,'index']);
+  Route::get("admin/versets/create",[VersetAdminController::class,'show']);
+  Route::post("admin/versets",[VersetAdminController::class,'store']);
+  Route::get("admin/versets/{verset}/edit",[VersetAdminController::class,'edit']);
+  Route::patch("admin/versets/{verset}",[VersetAdminController::class,'update']);
+  Route::delete("admin/versets/{verset}",[VersetAdminController::class,'destroy']);
 
   //Contact us
   

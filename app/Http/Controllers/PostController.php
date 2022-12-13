@@ -224,12 +224,12 @@ class PostController extends Controller
                              ->orWhere('message','like','%'.$req.'%')
                              ->get();
 
-             if(isset($posts)){
+             if(count($posts) > 0 ){
                 
                  return PostResource::collection($posts);
             }else{
               return response()->json([
-                  "error" => "Aucun post pour la recherche"
+                  "error" => "Aucun post pour la recherche ".$req
               ]);
 
             }

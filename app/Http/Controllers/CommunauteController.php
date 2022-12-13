@@ -183,11 +183,11 @@ class CommunauteController extends Controller
                              ->orWhere('description','like','%'.$req.'%')
                              ->get();
 
-           if(isset($communautes)){
+           if(count($communautes) > 0 ){
                return CommunauteResource::collection($communautes);
             }else{
               return response()->json([
-                  "error" => "Aucune communaute pour la recherche"
+                  "error" => "Aucune communaute pour la recherche ".$req
               ]);
 
             }

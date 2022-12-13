@@ -9,14 +9,14 @@ class Priere extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['subject','phone','email','image','user_id'];
+    protected $fillable = ['title','visibilite','subject','phone','email','image','user_id'];
 
 
     //Un sujet de priere avoir un ou plusieurs intercesseurs
-   /* public function prieres()
+    public function intercesseurs()
     {
         return $this->belongsToMany(User::class);
-    }*/
+    }
 
    //Un sujet de prière appartient à utilisateur
     

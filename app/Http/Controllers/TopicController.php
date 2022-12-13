@@ -196,12 +196,12 @@ class TopicController extends Controller
                              ->orWhere('content','like','%'.$req.'%')
                              ->get();
 
-             if(isset($topics)){
+             if(count($topics) > 0 ){
                 
                  return TopicResource::collection($topics);
             }else{
               return response()->json([
-                  "error" => "Aucun sujet pour la recherche"
+                  "error" => "Aucun sujet pour la recherche ".$req
               ]);
 
             }

@@ -82,12 +82,12 @@ class User extends Authenticatable
         return $this->hasMany(Don::class)->latest();
     }
 
-    /* // Many to many
+     // Many to many
     //Un utilisateur peut interceder pour un ou plusieurs sujets;
     public function prieres()
     {
         return $this->belongsToMany(Priere::class);
-    }*/
+    }
 
     //Roles
 

@@ -20,9 +20,19 @@ class VersetUserController extends Controller
      public function verset()
      {
         
+        // Verset du jour
         $verset = Verset::where('display_at',Carbon::today())->get();
 
-        return  VersetResource::collection($verset);
+        //6 Veserts des jours passés
+        $versets = Verset::where('display_at','<',Carbon::today())->get();
+
+        return response()->json([
+
+                 "verset" => VersetResource::collection($verset),
+                 "versets" => VersetResource::collection($versets),
+        ]);
+        
+      
   
 
      }

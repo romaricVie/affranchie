@@ -25,6 +25,8 @@ class PriereRequest extends FormRequest
     {
         return [
             //
+                'title' => ['required', 'string'],
+                'visibilite' => ['required', 'string'],
                 'phone' => ['required', 'string', 'max:50'],
                 'email' => ['required', 'string', 'email', 'max:255'],
                 'subject' => ['required','string','min:2'],

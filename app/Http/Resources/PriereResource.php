@@ -23,9 +23,12 @@ class PriereResource extends JsonResource
                             "user" => $this->user,
                             "phone"=>$this->phone,
                             "email" => $this->email,
+                            "title" => $this->title,
+                            "visibilite" => $this->visibilite,
+                          //  "maskAsRead" => $this->maskAsRead,
                             "subject" => $this->subject,
                             "image" => $this->image,
-                           // "intercesseurs" => $this->prieres,
+                          //  "asRead" => $this->intercesseurs,
                             "created_at" =>$this->created_at,
                             "updated_at" =>$this->updated_at,
                          ]

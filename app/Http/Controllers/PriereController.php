@@ -24,6 +24,9 @@ class PriereController extends Controller
         $priere = Priere::findOrfail($id);
         
        if($priere){
+    
+           //  auth()->user()->prieres()->save($priere);
+         //  auth()->user()->prieres()->toggle($priere);
              return new PriereResource($priere);
          }else{
             return response()->json([
@@ -37,8 +40,15 @@ class PriereController extends Controller
 
     public function store(PriereRequest $request)
     {
+       
+      // return $request;
     	$priere = Priere::create([
-
+      
+                                //title
+                                //visibilite ["yes","friend","sister","no"]
+                                //maskAsRead  visibilite
+                                "title"=>$request->title,
+                                "visibilite"=>$request->visibilite,
 						        "phone"=>$request->phone,
 						        "email"=>$request->email,
 						        "subject"=>$request->subject,
@@ -92,6 +102,30 @@ class PriereController extends Controller
         return auth()->user()->prieres()->toggle($priere->id);
     }
 
+    // search
+
+    public function search($req)
+    {
+        if($req){
+
+              $priere = Priere::where('title','like','%'.$req.'%')
+                             ->orWhere('subject','like','%'.$req.'%')
+                             ->get();
+
+             if(count($priere) > 0 ){
+                
+                 return PriereResource::collection($priere);
+            }else{
+              return response()->json([
+                  "error" => "Aucun sujet pour la recherche ".$req
+              ]);
+
+            }
+
+
+       }
+      
+    }
 
     private function storeImage()
     {
